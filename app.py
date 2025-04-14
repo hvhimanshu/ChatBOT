@@ -1,27 +1,13 @@
-from huggingface_hub import hf_hub_download
-import os
 from flask import Flask, request, jsonify
 import tensorflow as tf
 from PIL import Image
 import numpy as np
 import io
-import requests
 
 app = Flask(__name__)
 
 MODEL_PATH = "pneumonia_classification_model.h5"
-REPO_ID = "hvhimanshu/pneumonia_chatbot"
-FILENAME = "pneumonia_classification_model.h5"
 
-if not os.path.exists(MODEL_PATH):
-    print("Model not found locally. Downloading from Hugging Face Hub...")
-    hf_hub_download(
-        repo_id=REPO_ID,
-        filename=FILENAME,
-        local_dir=".",
-        local_dir_use_symlinks=False
-    )
-    print("Model download successfully.")
 # Load your trained CNN model
 model = tf.keras.models.load_model(MODEL_PATH)
 
