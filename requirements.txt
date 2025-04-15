@@ -3,3 +3,6 @@ tensorflow>=2.6.0
 pillow>=8.3.0
 numpy>=1.21.0
 waitress>=2.1.0
+streamlit>=1.44.1
+requests>=2.32.3
+fpdf>=1.7.2
