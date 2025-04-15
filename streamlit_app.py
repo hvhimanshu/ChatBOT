@@ -10,8 +10,8 @@ st.set_page_config(page_title="Pneumonia Detector", page_icon="🩺")
 st.title("🩺 AI-Powered Pneumonia Detection")
 
 # API configuration
-API_URL = "http://localhost:5000/predict"  # Your Render URL
-# API_URL = "https://pneumoniachatbot.onrender.com/predict"  # Your Render URL
+# API_URL = "http://localhost:5000/predict"  # Your Render URL
+API_URL = "https://pneumoniachatbot.onrender.com/predict"  # Your Render URL
 MAX_FILE_SIZE = 5  # MB
 
 def generate_pdf_report(patient_data, analysis_result):
