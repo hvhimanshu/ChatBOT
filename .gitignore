@@ -3,4 +3,4 @@ Pneumonia_chatbot/
 __pycache__/
 *.pyc
 .env
-pneumonia_classification_model.h5
+# pneumonia_classification_model.h5
