@@ -16,8 +16,8 @@ if "ask_for_xray" not in st.session_state:
     st.session_state.ask_for_xray = False
 
 # API configuration
-API_URL = "https://pneumoniachatbot.onrender.com/predict"
-# API_URL = "http://localhost:5000/predict"
+# API_URL = "https://pneumoniachatbot.onrender.com/predict"
+API_URL = "http://localhost:5000/predict"
 MAX_FILE_SIZE = 5  # MB
 
 
