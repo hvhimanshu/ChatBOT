@@ -132,7 +132,7 @@ def main():
             if st.button("Analyze Image", type="primary"):
                 with st.spinner("Analyzing X-ray..."):
                     try:
-                        files = {"file": uploaded_file.getvalue()}
+                        files = {"file":(uploaded_file.name, uploaded_file.getvalue(),uploaded_file.type)}
                         response = requests.post(API_URL, files=files)
 
                         if response.status_code == 200:
