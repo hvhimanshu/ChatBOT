@@ -95,6 +95,7 @@
 #     serve(app, host='0.0.0.0', port=port, threads=4)
 
 import os
+import gdown
 import requests
 import numpy as np
 from flask import Flask, request, jsonify
@@ -110,9 +111,12 @@ MODEL_PATH = "pneumonia_classification_model.h5"
 def download_model():
     if not os.path.exists(MODEL_PATH):
         print("🔄 Downloading model from Google Drive...")
-        response = requests.get(MODEL_URL)
-        with open(MODEL_PATH, 'wb') as f:
-            f.write(response.content)
+        file_id = "1BCV-dXoruc2roqbL_xSuxx5qQxHiWj5b"
+        gdrive_url=f"https://drive.google.com/uc?id={file_id}"
+        gdown.download(gdrive_url,MODEL_PATH,quiet=False)
+        # response = requests.get(MODEL_URL)
+        # with open(MODEL_PATH, 'wb') as f:
+        #     f.write(response.content)
         print("✅ Model downloaded successfully.")
     else:
         print("✅ Model already exists locally.")
